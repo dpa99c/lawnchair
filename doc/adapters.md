@@ -45,6 +45,10 @@ Adapters expose a consistent interface to a persistent storage implementation. A
             <td>memory</td>
             <td class="subdue">in memory reference implementation</td>
         </tr>
+        <tr>
+            <td>cordova-native-sqlite</td>
+            <td class="subdue">Cordova-specific to interface with native SQLite on mobile via a plugin</td>
+        </tr>
     </table>
 </div>
 
@@ -86,4 +90,4 @@ If you require an adapter thats not listed here it is trivial to implement your 
     nuke (callback)
     
 
-The tests ensure adapters are consistent no matter what the underlying store is. If you are writing an adapter check out `./tests/lawnchair-spec.js`. The memory adaptor is probably the simplest implementation to learn from. Note, all `Lawnchair` methods accept a callback as a last parameter. This is deliberate, most modern clientside storages only have async style interfaces, for a good reason, your code won't block the main thread aiding in the perception of performance. That callback will be scoped to the `Lawnchair` instance. Make use of `fn` and `lambda` methods to allow for terse callbacks. 
+The tests ensure adapters are consistent no matter what the underlying store is. If you are writing an adapter check out `./tests/lawnchair-spec.js`. The memory adaptor is probably the simplest implementation to learn from. Note, all `Lawnchair` methods accept a callback as a last parameter. This is deliberate, most modern clientside storages only have async style interfaces, for a good reason, your code won't block the main thread aiding in the perception of performance. That callback will be scoped to the `Lawnchair` instance. Make use of `fn` and `lambda` methods to allow for terse callbacks.
